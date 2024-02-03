@@ -1,5 +1,11 @@
+import Music from "./pages/Music";
+
 const App = () => {
-  return <h1>React App</h1>;
+  return (
+    <div>
+      <Music />
+    </div>
+  );
 };
 
 export default App;
