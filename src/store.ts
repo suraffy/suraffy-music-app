@@ -1,7 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
+import musicSlice from "./redux/musicSlice";
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    musics: musicSlice,
+  },
 });
 
 export type RootState = ReturnType<typeof store.getState>;
