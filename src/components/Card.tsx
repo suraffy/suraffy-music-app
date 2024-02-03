@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import musicThumbnail from "../assets/music-image.svg";
 
 const CardBox = styled.div`
-  max-width: 18rem;
+  max-width: 20rem;
 `;
 
 const CardImage = styled.img``;
@@ -20,9 +20,9 @@ const Card = () => {
         alt="Card image cap"
       />
       <div className="card-body">
-        <h5 className="card-title h6">
-          Shape of You &bull;{" "}
-          <span style={{ fontWeight: "normal" }}>by Ed Shreen</span>
+        <h5 className="card-title h6 d-flex justify-content-between">
+          <span>Shape of You</span>
+          <span style={{ fontWeight: "normal" }}>🎤 Ed Shreen</span>
         </h5>
         <ul>
           <li>
@@ -32,7 +32,7 @@ const Card = () => {
             Album: <BoldSpan>Divide</BoldSpan>
           </li>
         </ul>
-        <div className="d-flex flex-wrap">
+        <div className="d-flex flex-wrap justify-content-center">
           <button className="btn btn-warning btn-sm px-3 mx-2">Edit</button>
           <button className="btn btn-danger btn-sm mx-2">Delete</button>
         </div>
