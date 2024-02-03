@@ -1,0 +1,93 @@
+[
+  {
+    title: "Shape of You",
+    artist: "Ed Sheeran",
+    genre: "Pop",
+    album: "Divide",
+  },
+  {
+    title: "Blinding Lights",
+    artist: "The Weeknd",
+    genre: "Pop",
+    album: "After Hours",
+  },
+  {
+    title: "Levitating",
+    artist: "Dua Lipa",
+    genre: "Pop",
+    album: "Future Nostalgia",
+  },
+  {
+    title: "Watermelon Sugar",
+    artist: "Harry Styles",
+    genre: "Pop",
+    album: "Fine Line",
+  },
+  {
+    title: "Bad Guy",
+    artist: "Billie Eilish",
+    genre: "Pop",
+    album: "When We All Fall Asleep",
+  },
+  { title: "Peaches", artist: "Justin Bieber", genre: "Pop", album: "Justice" },
+  {
+    title: "Stay",
+    artist: "The Kid LAROI",
+    genre: "Pop",
+    album: "Single (Upcoming Album)",
+  },
+  {
+    title: "Save Your Tears",
+    artist: "The Weeknd",
+    genre: "Pop",
+    album: "After Hours (Remixes)",
+  },
+  {
+    title: "Stairway to Heaven",
+    artist: "Led Zeppelin",
+    genre: "Rock",
+    album: "Led Zeppelin IV",
+  },
+  {
+    title: "Bohemian Rhapsody",
+    artist: "Queen",
+    genre: "Rock",
+    album: "A Night at the Opera",
+  },
+  {
+    title: "Sweet Child o' Mine",
+    artist: "Guns N' Roses",
+    genre: "Rock",
+    album: "Appetite for Destruction",
+  },
+  {
+    title: "Hotel California",
+    artist: "Eagles",
+    genre: "Rock",
+    album: "Hotel California",
+  },
+  {
+    title: "Livin' on a Prayer",
+    artist: "Bon Jovi",
+    genre: "Rock",
+    album: "Slippery When Wet",
+  },
+  {
+    title: "Sicko Mode",
+    artist: "Travis Scott",
+    genre: "Hip Hop",
+    album: "Astroworld",
+  },
+  {
+    title: "Old Town Road",
+    artist: " Lil Nas X",
+    genre: "Hip Hop",
+    album: "Single",
+  },
+  {
+    title: "God's Plan",
+    artist: "Drake",
+    genre: "Hip Hop",
+    album: "Scorpion",
+  },
+];
