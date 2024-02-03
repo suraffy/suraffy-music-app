@@ -3,7 +3,7 @@ import musicSlice from "./redux/musicSlice";
 
 export const store = configureStore({
   reducer: {
-    musics: musicSlice,
+    musicList: musicSlice,
   },
 });
 
