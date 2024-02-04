@@ -1,11 +1,15 @@
 import { useSelector, useDispatch } from "react-redux";
-import { remove } from "../redux/musicSlice";
+import { update, remove, MusicState } from "../redux/musicSlice";
 import type { RootState } from "../store";
 import Card from "./Card";
 
 const Main = () => {
   const musicList = useSelector((state: RootState) => state.musicList.music);
   const dispatch = useDispatch();
+
+  const handleUpdate = (music: MusicState) => {
+    dispatch(update(music));
+  };
 
   const handleRemove = (id: number) => {
     dispatch(remove(id));
@@ -17,7 +21,11 @@ const Main = () => {
       <div className="row justify-content-evenly">
         {musicList.map((music, index) => (
           <div key={index} className="col-lg-6 col-xl-4 mb-4">
-            <Card music={music} onRemove={handleRemove} />
+            <Card
+              music={music}
+              onUpdate={handleUpdate}
+              onRemove={handleRemove}
+            />
           </div>
         ))}
       </div>

@@ -3,6 +3,7 @@ import DeleteModal from "./common/DeleteModal";
 import EditModal from "./common/EditModal";
 import musicThumbnail from "../assets/music-image.svg";
 import { useState } from "react";
+import { MusicState } from "../redux/musicSlice";
 
 const CardBox = styled.div`
   max-width: 20rem;
@@ -22,10 +23,11 @@ interface Props {
     genre: string;
     album: string;
   };
+  onUpdate: (music: MusicState) => void;
   onRemove: (id: number) => void;
 }
 
-const Card = ({ music, onRemove }: Props) => {
+const Card = ({ music, onUpdate, onRemove }: Props) => {
   const [openDeleteModal, setOpenDeleteModal] = useState(false);
   const [openEditModal, setOpenEditModal] = useState(false);
 
@@ -35,7 +37,9 @@ const Card = ({ music, onRemove }: Props) => {
     setOpenDeleteModal(false);
   };
 
-  const handleCloseEditModal = () => {
+  const handleCloseEditModal = (music: MusicState) => {
+    if (music) onUpdate(music);
+
     setOpenEditModal(false);
   };
 
@@ -61,7 +65,7 @@ const Card = ({ music, onRemove }: Props) => {
         <div className="card-body">
           <h5 className="card-title h6 d-flex justify-content-between">
             <span>{music.title}</span>
-            <span style={{ fontWeight: "normal" }}>🎤 Ed Shreen</span>
+            <span style={{ fontWeight: "normal" }}>🎤 {music.artist}</span>
           </h5>
           <ul>
             <li>
