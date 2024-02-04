@@ -29,14 +29,34 @@ export const musicSlice = createSlice({
         state.music[index] = updatedMusic;
       }
     },
+
     remove: (state, action: PayloadAction<number>) => {
       state.music = state.music.filter(
         (m: MusicState) => m.id !== action.payload
       );
     },
+
+    search: (state, action: PayloadAction<string>) => {
+      const searchPattern = new RegExp(action.payload, "i");
+
+      state.music = musicDB.filter(
+        (m) =>
+          m.title.search(searchPattern) !== -1 ||
+          m.artist.search(searchPattern) !== -1
+      );
+    },
+
+    filter: (state, action: PayloadAction<string>) => {
+      const filterGenre = action.payload.toLowerCase();
+      console.log({ filterGenre });
+
+      state.music = musicDB.filter(
+        (m) => m.genre.toLowerCase().replace(/\s+/g, "") === filterGenre
+      );
+    },
   },
 });
 
-export const { update, remove } = musicSlice.actions;
+export const { update, remove, search, filter } = musicSlice.actions;
 
 export default musicSlice.reducer;

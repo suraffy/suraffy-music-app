@@ -1,3 +1,6 @@
+import { useDispatch } from "react-redux";
+import { filter } from "../redux/musicSlice";
+
 import styled from "@emotion/styled";
 import pop from "../assets/pop.png";
 import rock from "../assets/rock.png";
@@ -25,35 +28,42 @@ const List = styled.li`
 `;
 
 const Sidebar = () => {
+  const dispatch = useDispatch();
+
+  const handleFilter = (value: string) => {
+    // console.log(value);
+    dispatch(filter(value));
+  };
+
   return (
     <div className="mb-5">
       <h2 className="mt-1 mb-3">Genres</h2>
       <UList>
-        <List>
+        <List onClick={() => handleFilter("pop")}>
           <img src={pop} width={"40px"} className="mx-2" />
           Pop
         </List>
-        <List>
+        <List onClick={() => handleFilter("rock")}>
           <img src={rock} width={"40px"} className="mx-2" />
           Rock
         </List>
-        <List>
+        <List onClick={() => handleFilter("hiphop")}>
           <img src={hiphop} width={"40px"} className="mx-2" />
           Hip Hop
         </List>
-        <List>
+        <List onClick={() => handleFilter("jazz")}>
           <img src={jazz} width={"40px"} className="mx-2" />
           Jazz
         </List>
-        <List>
+        <List onClick={() => handleFilter("blues")}>
           <img src={blues} width={"40px"} className="mx-2" />
           Blues
         </List>
-        <List>
+        <List onClick={() => handleFilter("electronic")}>
           <img src={electronic} width={"40px"} className="mx-2" />
           Electronic
         </List>
-        <List>
+        <List onClick={() => handleFilter("classical")}>
           <img src={classical} width={"40px"} className="mx-2" />
           Classical
         </List>
