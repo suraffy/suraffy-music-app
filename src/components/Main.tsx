@@ -2,6 +2,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { remove } from "../redux/musicSlice";
 import type { RootState } from "../store";
 import Card from "./Card";
+import EditModal from "./common/EditModal";
+// import DeleteModal from "./common/DeleteModal";
 
 const Main = () => {
   const musicList = useSelector((state: RootState) => state.musicList.music);
@@ -13,6 +15,8 @@ const Main = () => {
 
   return (
     <div className="">
+      <EditModal />
+      {/* <DeleteModal /> */}
       <h1 className="mb-3">Musics</h1>
       <div className="row justify-content-evenly">
         {musicList.map((music, index) => (
