@@ -1,10 +1,16 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Music from "./pages/Music";
+import Statistics from "./pages/Statistics";
 
 const App = () => {
   return (
-    <div>
-      <Music />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" index element={<Music />} />
+        <Route path="/music" element={<Music />} />
+        <Route path="/statistics" element={<Statistics />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
