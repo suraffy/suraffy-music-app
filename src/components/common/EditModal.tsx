@@ -1,63 +1,52 @@
+import styled from "@emotion/styled";
 import Form from "./Form";
 
-const EditModal = () => {
-  return (
-    <div className="">
-      <button
-        type="button"
-        className="btn btn-primary"
-        data-toggle="modal"
-        data-target="#exampleModal"
-      >
-        Launch demo modal
-      </button>
+interface Props {
+  openModal: boolean;
+  music: {
+    id: number;
+    title: string;
+    artist: string;
+    genre: string;
+    album: string;
+  };
+  onCloseModal: () => void;
+}
 
-      <div
-        className="modal fade show"
-        id="exampleModal"
-        tabIndex={-1}
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-        style={{ display: "block" }}
-      >
+const EditModal = ({ openModal, music, onCloseModal }: Props) => {
+  const Modal = styled.div`
+    display: block;
+    background: rgba(0, 0, 0, 0.5);
+  `;
+
+  const CloseBtn = styled.button`
+    font-size: 24px;
+    font-weight: bold;
+  `;
+
+  return (
+    <div>
+      <Modal className={`modal fade ${openModal ? "show" : "hide d-none"}`}>
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-title" id="exampleModalLabel">
-                Edit Music
-              </h5>
-              <button
-                type="button"
-                className="close btn"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
-                <span
-                  aria-hidden="true"
-                  style={{ fontSize: "24px", fontWeight: "bold" }}
-                >
-                  &times;
-                </span>
-              </button>
+              <h5 className="modal-title">Edit Music</h5>
+              <CloseBtn className="btn" onClick={onCloseModal}>
+                &times;
+              </CloseBtn>
             </div>
             <div className="modal-body">
-              <Form />
+              <Form music={music} />
             </div>
             <div className="modal-footer justify-content-center">
-              <button
-                type="button"
-                className="btn btn-secondary"
-                data-dismiss="modal"
-              >
+              <button className="btn btn-secondary" onClick={onCloseModal}>
                 Discard
               </button>
-              <button type="button" className="btn btn-warning">
-                Update music
-              </button>
+              <button className="btn btn-warning">Update music</button>
             </div>
           </div>
         </div>
-      </div>
+      </Modal>
     </div>
   );
 };

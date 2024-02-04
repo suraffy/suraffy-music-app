@@ -1,4 +1,14 @@
-const Form = () => {
+interface Props {
+  music: {
+    id: number;
+    title: string;
+    artist: string;
+    genre: string;
+    album: string;
+  };
+}
+
+const Form = ({ music }: Props) => {
   return (
     <form>
       <div className="form-group mb-2">
@@ -8,6 +18,8 @@ const Form = () => {
           className="form-control"
           id="song-title"
           name="title"
+          defaultValue={music.title}
+          autoFocus
         />
         <small className="form-text text-danger">
           Error Message appears here
@@ -39,6 +51,7 @@ const Form = () => {
             className="form-control"
             id="artist-name"
             name="artist"
+            defaultValue={music.artist}
           />
           <small className="form-text text-danger">
             Error Message appears here
@@ -52,6 +65,7 @@ const Form = () => {
             className="form-control"
             id="song-album"
             name="album"
+            defaultValue={music.album}
           />
           <small className="form-text text-danger">
             Error Message appears here
