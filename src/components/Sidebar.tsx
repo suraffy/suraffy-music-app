@@ -31,12 +31,11 @@ const Sidebar = () => {
   const dispatch = useDispatch();
 
   const handleFilter = (value: string) => {
-    // console.log(value);
     dispatch(filter(value));
   };
 
   return (
-    <div className="mb-5">
+    <div className="mb-5 position-fixed fixed-left bg-white">
       <h2 className="mt-1 mb-3">Genres</h2>
       <UList>
         <List onClick={() => handleFilter("pop")}>
