@@ -7,6 +7,7 @@ const Header = () => {
         <a
           href="/"
           className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none"
+          style={{ outlineColor: "blue" }}
         >
           <img src={HeadPhoneSVG} alt="" height={"50px"} />
           <span className="fs-4 px-2 h1 text-primary">Music App</span>
