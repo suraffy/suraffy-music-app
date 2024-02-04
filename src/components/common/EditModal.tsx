@@ -31,18 +31,12 @@ const EditModal = ({ openModal, music, onCloseModal }: Props) => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title">Edit Music</h5>
-              <CloseBtn className="btn" onClick={onCloseModal}>
+              <CloseBtn className="btn" onClick={() => onCloseModal()}>
                 &times;
               </CloseBtn>
             </div>
             <div className="modal-body">
-              <Form music={music} />
-            </div>
-            <div className="modal-footer justify-content-center">
-              <button className="btn btn-secondary" onClick={onCloseModal}>
-                Discard
-              </button>
-              <button className="btn btn-warning">Update music</button>
+              <Form music={music} onCloseModal={onCloseModal} />
             </div>
           </div>
         </div>
