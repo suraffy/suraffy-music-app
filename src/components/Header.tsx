@@ -14,7 +14,7 @@ const Header = () => {
   };
 
   return (
-    <div className="border-bottom py-2 mb-4">
+    <div className="border-bottom py-2 mb-4 sticky-top bg-white">
       <header className="container d-flex flex-wrap justify-content-between">
         <a
           href="/"
