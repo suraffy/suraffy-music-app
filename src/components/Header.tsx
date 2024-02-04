@@ -1,6 +1,18 @@
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { search } from "../redux/musicSlice";
 import HeadPhoneSVG from "../assets/headphone.svg";
 
 const Header = () => {
+  const dispatch = useDispatch();
+
+  const [keyword, setKeyword] = useState("");
+
+  const handleSearch = (value: string) => {
+    setKeyword(value);
+    dispatch(search(value));
+  };
+
   return (
     <div className="border-bottom py-2 mb-4">
       <header className="container d-flex flex-wrap justify-content-between">
@@ -14,12 +26,16 @@ const Header = () => {
         </a>
 
         <ul className="nav nav-pills pt-2">
-          <form className="form-inline mx-3">
+          <form
+            className="form-inline mx-3"
+            onSubmit={(e) => e.preventDefault()}
+          >
             <input
               className="form-control mr-sm-2"
               type="search"
               placeholder="Search music"
-              aria-label="Search"
+              value={keyword}
+              onChange={(e) => handleSearch(e.target.value)}
             />
           </form>
 
