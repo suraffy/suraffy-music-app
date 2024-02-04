@@ -1,62 +1,53 @@
-const DeleteModal = () => {
-  return (
-    <div className="">
-      <button
-        type="button"
-        className="btn btn-primary"
-        data-toggle="modal"
-        data-target="#exampleModal"
-      >
-        Launch demo modal
-      </button>
+import styled from "@emotion/styled";
 
-      <div
-        className="modal fade show"
-        id="exampleModal"
-        tabIndex={-1}
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-        style={{ display: "block" }}
-      >
+interface Props {
+  openModal: boolean;
+  onCloseModal: (confirm: boolean) => void;
+}
+
+const DeleteModal = ({ openModal, onCloseModal }: Props) => {
+  const Modal = styled.div`
+    display: block;
+    background: rgba(0, 0, 0, 0.5);
+  `;
+
+  const CloseBtn = styled.button`
+    font-size: 24px;
+    font-weight: bold;
+  `;
+
+  return (
+    <>
+      <Modal className={`modal fade ${openModal ? "show" : "hide d-none"}`}>
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-title" id="exampleModalLabel">
-                Delete Music
-              </h5>
-              <button
-                type="button"
-                className="close btn"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
-                <span
-                  aria-hidden="true"
-                  style={{ fontSize: "24px", fontWeight: "bold" }}
-                >
-                  &times;
-                </span>
-              </button>
+              <h5 className="modal-title">Delete Music</h5>
+              <CloseBtn className="btn" onClick={() => onCloseModal(false)}>
+                &times;
+              </CloseBtn>
             </div>
             <div className="modal-body">
               <p>Are you sure, you want to delete this music?</p>
             </div>
             <div className="modal-footer justify-content-center">
               <button
-                type="button"
                 className="btn btn-secondary"
-                data-dismiss="modal"
+                onClick={() => onCloseModal(false)}
               >
                 Discard
               </button>
-              <button type="button" className="btn btn-danger">
+              <button
+                className="btn btn-danger"
+                onClick={() => onCloseModal(true)}
+              >
                 Delete music
               </button>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </Modal>
+    </>
   );
 };
 
