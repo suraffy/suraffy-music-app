@@ -1,9 +1,6 @@
 import { useSelector } from "react-redux";
 import type { RootState } from "../store";
 import styled from "@emotion/styled";
-
-import Footer from "../components/Footer";
-import Header from "../components/Header";
 import StaticCard from "../components/common/StaticCard";
 
 const Statistics = () => {
@@ -19,8 +16,6 @@ const Statistics = () => {
 
   return (
     <>
-      <Header />
-
       <div className="container">
         <div className="d-flex flex-wrap gap-5 justify-content-center">
           <StaticCard
@@ -58,8 +53,6 @@ const Statistics = () => {
           </figure>
         </div>
       </div>
-
-      <Footer />
     </>
   );
 };

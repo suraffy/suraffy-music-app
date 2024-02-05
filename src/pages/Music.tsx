@@ -1,13 +1,9 @@
-import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
 import Main from "../components/Main";
-import Footer from "../components/Footer";
 
 const Music = () => {
   return (
     <div>
-      <Header />
-
       <div className="container">
         <div className="row">
           <div className="col-md-4 col-lg-3">
@@ -18,8 +14,6 @@ const Music = () => {
           </div>
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 };
