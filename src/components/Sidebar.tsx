@@ -20,6 +20,7 @@ const List = styled.li`
   color: #444;
   font-size: 1.2rem;
   padding: 8px;
+  margin: 0;
   cursor: pointer;
   border-radius: 10px;
   &:hover {
@@ -28,9 +29,9 @@ const List = styled.li`
 `;
 
 const SideCont = styled.div`
-  padding-right: 16px;
   background: white;
   z-index: 1;
+  top: 100px;
 `;
 
 const Sidebar = () => {
@@ -41,7 +42,7 @@ const Sidebar = () => {
   };
 
   return (
-    <SideCont className="mb-5 position-fixed fixed-left">
+    <SideCont className="mb-5 sticky-md-top">
       <h2 className="mt-1 mb-3">Genres</h2>
       <UList>
         <List onClick={() => handleFilter("pop")}>
