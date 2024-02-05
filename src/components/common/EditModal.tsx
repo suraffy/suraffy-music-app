@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import Form from "./Form";
+import { MusicState } from "../../redux/musicSlice";
 
 interface Props {
   openModal: boolean;
@@ -10,7 +11,7 @@ interface Props {
     genre: string;
     album: string;
   };
-  onCloseModal: () => void;
+  onCloseModal: (music: MusicState | null) => void;
 }
 
 const EditModal = ({ openModal, music, onCloseModal }: Props) => {
@@ -31,7 +32,7 @@ const EditModal = ({ openModal, music, onCloseModal }: Props) => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title">Edit Music</h5>
-              <CloseBtn className="btn" onClick={() => onCloseModal()}>
+              <CloseBtn className="btn" onClick={() => onCloseModal(null)}>
                 &times;
               </CloseBtn>
             </div>

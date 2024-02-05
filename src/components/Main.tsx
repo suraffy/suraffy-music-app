@@ -8,7 +8,7 @@ const Main = () => {
   const musicList = useSelector((state: RootState) => state.musicList.music);
   const dispatch = useDispatch();
 
-  const handleUpdate = (music: MusicState) => {
+  const handleUpdate = (music: MusicState | null) => {
     dispatch(update(music));
   };
 

@@ -25,7 +25,7 @@ interface Props {
     genre: string;
     album: string;
   };
-  onUpdate: (music: MusicState) => void;
+  onUpdate: (music: MusicState | null) => void;
   onRemove: (id: number) => void;
 }
 
@@ -39,7 +39,7 @@ const Card = ({ music, onUpdate, onRemove }: Props) => {
     setOpenDeleteModal(false);
   };
 
-  const handleCloseEditModal = (music: MusicState) => {
+  const handleCloseEditModal = (music: MusicState | null) => {
     if (music) onUpdate(music);
 
     setOpenEditModal(false);

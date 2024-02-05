@@ -18,15 +18,17 @@ export const musicSlice = createSlice({
   name: "musicList",
   initialState,
   reducers: {
-    update: (state, action: PayloadAction<object>) => {
+    update: (state, action: PayloadAction<MusicState | null>) => {
       const updatedMusic = action.payload;
 
       const index = state.music.findIndex(
-        (music) => music.id === updatedMusic.id
+        (music) => music.id === updatedMusic?.id
       );
 
       if (index !== -1) {
-        state.music[index] = updatedMusic;
+        if (updatedMusic) {
+          state.music[index] = updatedMusic;
+        }
       }
     },
 
