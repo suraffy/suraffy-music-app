@@ -1,6 +1,13 @@
+import styled from "@emotion/styled";
+
+const FooterDiv = styled.footer`
+  margin-top: 280px;
+  z-index: -1;
+`;
+
 const Footer = () => {
   return (
-    <footer className="container mt-5">
+    <FooterDiv className="container">
       <hr />
       <span className="d-block text-center  mt-1 mb-3">
         Designed and Developed by{" "}
@@ -8,7 +15,7 @@ const Footer = () => {
           Surafel Araya
         </a>
       </span>
-    </footer>
+    </FooterDiv>
   );
 };
 
