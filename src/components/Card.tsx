@@ -1,4 +1,6 @@
 import styled from "@emotion/styled";
+import { motion } from "framer-motion";
+
 import DeleteModal from "./common/DeleteModal";
 import EditModal from "./common/EditModal";
 import musicThumbnail from "../assets/music-image.svg";
@@ -44,7 +46,13 @@ const Card = ({ music, onUpdate, onRemove }: Props) => {
   };
 
   return (
-    <>
+    <motion.div
+      layout
+      animate={{ opacity: 1, scale: 1 }}
+      initial={{ opacity: 0, scale: 0 }}
+      exit={{ opacity: 0, scale: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <DeleteModal
         openModal={openDeleteModal}
         onCloseModal={handleCloseDeleteModal}
@@ -91,7 +99,7 @@ const Card = ({ music, onUpdate, onRemove }: Props) => {
           </div>
         </div>
       </CardBox>
-    </>
+    </motion.div>
   );
 };
 

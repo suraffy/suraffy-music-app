@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { update, remove, MusicState } from "../redux/musicSlice";
 import type { RootState } from "../store";
+import { motion, AnimatePresence } from "framer-motion";
 import Card from "./Card";
 
 const Main = () => {
@@ -18,17 +19,19 @@ const Main = () => {
   return (
     <div>
       <h1 className="mb-3">Musics</h1>
-      <div className="row justify-content-evenly">
+      <motion.div layout className="row justify-content-evenly">
         {musicList.map((music, index) => (
           <div key={index} className="col-lg-6 col-xl-4 mb-4">
-            <Card
-              music={music}
-              onUpdate={handleUpdate}
-              onRemove={handleRemove}
-            />
+            <AnimatePresence>
+              <Card
+                music={music}
+                onUpdate={handleUpdate}
+                onRemove={handleRemove}
+              />
+            </AnimatePresence>
           </div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };
