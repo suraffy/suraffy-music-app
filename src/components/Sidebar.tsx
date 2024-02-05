@@ -27,6 +27,12 @@ const List = styled.li`
   }
 `;
 
+const SideCont = styled.div`
+  padding-right: 16px;
+  background: white;
+  z-index: 1;
+`;
+
 const Sidebar = () => {
   const dispatch = useDispatch();
 
@@ -35,28 +41,28 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="mb-5 position-fixed fixed-left bg-white">
+    <SideCont className="mb-5 position-fixed fixed-left">
       <h2 className="mt-1 mb-3">Genres</h2>
       <UList>
         <List onClick={() => handleFilter("pop")}>
           <img src={pop} width={"40px"} className="mx-2" />
           Pop
         </List>
+        <List onClick={() => handleFilter("blues")}>
+          <img src={blues} width={"40px"} className="mx-2" />
+          Blues
+        </List>
         <List onClick={() => handleFilter("rock")}>
           <img src={rock} width={"40px"} className="mx-2" />
           Rock
-        </List>
-        <List onClick={() => handleFilter("hiphop")}>
-          <img src={hiphop} width={"40px"} className="mx-2" />
-          Hip Hop
         </List>
         <List onClick={() => handleFilter("jazz")}>
           <img src={jazz} width={"40px"} className="mx-2" />
           Jazz
         </List>
-        <List onClick={() => handleFilter("blues")}>
-          <img src={blues} width={"40px"} className="mx-2" />
-          Blues
+        <List onClick={() => handleFilter("hiphop")}>
+          <img src={hiphop} width={"40px"} className="mx-2" />
+          Hip Hop
         </List>
         <List onClick={() => handleFilter("electronic")}>
           <img src={electronic} width={"40px"} className="mx-2" />
@@ -67,7 +73,7 @@ const Sidebar = () => {
           Classical
         </List>
       </UList>
-    </div>
+    </SideCont>
   );
 };
 
