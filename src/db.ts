@@ -8,24 +8,24 @@ export default [
   },
   {
     id: 2,
+    title: "Shape of You",
+    artist: "Ed Sheeran",
+    genre: "Pop",
+    album: "Divide",
+  },
+  {
+    id: 3,
     title: "Crossroads",
     artist: "Robert Johnson",
     genre: "Blues",
     album: "King of the Delta",
   },
   {
-    id: 3,
+    id: 4,
     title: "Clair de Lune",
     artist: "Flight Facilities",
     genre: "Electronic",
     album: "Down to Earth",
-  },
-  {
-    id: 4,
-    title: "Shape of You",
-    artist: "Ed Sheeran",
-    genre: "Pop",
-    album: "Divide",
   },
   {
     id: 5,
@@ -136,7 +136,7 @@ export default [
   {
     id: 20,
     title: "Old Town Road",
-    artist: " Lil Nas X",
+    artist: "Lil Nas X",
     genre: "Hip Hop",
     album: "Single",
   },
@@ -146,5 +146,19 @@ export default [
     artist: "Drake",
     genre: "Hip Hop",
     album: "Scorpion",
+  },
+  {
+    id: 22,
+    title: "StringMax",
+    artist: "Drake",
+    genre: "Electronic",
+    album: "Scorpion",
+  },
+  {
+    id: 23,
+    title: "WolfStand",
+    artist: "Drake",
+    genre: "Classical",
+    album: "Slippery",
   },
 ];
