@@ -50,7 +50,6 @@ export const musicSlice = createSlice({
 
     filter: (state, action: PayloadAction<string>) => {
       const filterGenre = action.payload.toLowerCase();
-      console.log({ filterGenre });
 
       state.music = musicDB.filter(
         (m) => m.genre.toLowerCase().replace(/\s+/g, "") === filterGenre
