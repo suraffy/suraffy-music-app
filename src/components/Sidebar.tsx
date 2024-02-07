@@ -1,4 +1,5 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import type { RootState } from "../store";
 import { filter } from "../redux/musicSlice";
 
 import styled from "@emotion/styled";
@@ -35,6 +36,10 @@ const SideCont = styled.div`
 `;
 
 const Sidebar = () => {
+  const filterKeyword = useSelector(
+    (state: RootState) => state.musicList.filterKeyword
+  );
+
   const dispatch = useDispatch();
 
   const handleFilter = (value: string) => {
@@ -45,31 +50,80 @@ const Sidebar = () => {
     <SideCont className="mb-5 sticky-md-top">
       <h2 className="mt-1 mb-3">Genres</h2>
       <UList>
-        <List onClick={() => handleFilter("pop")}>
+        <List
+          onClick={() => handleFilter("pop")}
+          style={
+            filterKeyword === "pop"
+              ? { background: "#f4f4f4" }
+              : { background: "#fff" }
+          }
+        >
           <img src={pop} width={"40px"} className="mx-2" />
           Pop
         </List>
-        <List onClick={() => handleFilter("blues")}>
+        <List
+          onClick={() => handleFilter("blues")}
+          style={
+            filterKeyword === "blues"
+              ? { background: "#f4f4f4" }
+              : { background: "#fff" }
+          }
+        >
           <img src={blues} width={"40px"} className="mx-2" />
           Blues
         </List>
-        <List onClick={() => handleFilter("rock")}>
+        <List
+          onClick={() => handleFilter("rock")}
+          style={
+            filterKeyword === "rock"
+              ? { background: "#f4f4f4" }
+              : { background: "#fff" }
+          }
+        >
           <img src={rock} width={"40px"} className="mx-2" />
           Rock
         </List>
-        <List onClick={() => handleFilter("jazz")}>
+        <List
+          onClick={() => handleFilter("jazz")}
+          style={
+            filterKeyword === "jazz"
+              ? { background: "#f4f4f4" }
+              : { background: "#fff" }
+          }
+        >
           <img src={jazz} width={"40px"} className="mx-2" />
           Jazz
         </List>
-        <List onClick={() => handleFilter("hiphop")}>
+        <List
+          onClick={() => handleFilter("hiphop")}
+          style={
+            filterKeyword === "hiphop"
+              ? { background: "#f4f4f4" }
+              : { background: "#fff" }
+          }
+        >
           <img src={hiphop} width={"40px"} className="mx-2" />
           Hip Hop
         </List>
-        <List onClick={() => handleFilter("electronic")}>
+        <List
+          onClick={() => handleFilter("electronic")}
+          style={
+            filterKeyword === "electronic"
+              ? { background: "#f4f4f4" }
+              : { background: "#fff" }
+          }
+        >
           <img src={electronic} width={"40px"} className="mx-2" />
           Electronic
         </List>
-        <List onClick={() => handleFilter("classical")}>
+        <List
+          onClick={() => handleFilter("classical")}
+          style={
+            filterKeyword === "classical"
+              ? { background: "#f4f4f4" }
+              : { background: "#fff" }
+          }
+        >
           <img src={classical} width={"40px"} className="mx-2" />
           Classical
         </List>
