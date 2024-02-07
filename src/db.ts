@@ -4,7 +4,7 @@ export default [
     title: "The Thrill",
     artist: "B.B. King",
     genre: "Blues",
-    album: "Completely",
+    album: "Fine Line",
   },
   {
     id: 2,
@@ -18,14 +18,14 @@ export default [
     title: "Crossroads",
     artist: "Robert",
     genre: "Blues",
-    album: "King of the Delta",
+    album: "Fine Line",
   },
   {
     id: 4,
     title: "Clair",
     artist: "Flight Facilities",
     genre: "Electronic",
-    album: "Down to Earth",
+    album: "Fine Line",
   },
   {
     id: 5,
@@ -46,7 +46,7 @@ export default [
     title: "Bohemian",
     artist: "Queen",
     genre: "Rock",
-    album: "Night at Opera",
+    album: "Fine Line",
   },
   {
     id: 8,
@@ -81,7 +81,7 @@ export default [
     title: "So What",
     artist: "Miles Davis",
     genre: "Jazz",
-    album: "Kind of Blue",
+    album: "Fine Line",
   },
   {
     id: 13,
@@ -95,7 +95,7 @@ export default [
     title: "Stay",
     artist: "The Kid",
     genre: "Pop",
-    album: "Single",
+    album: "After Hours",
   },
   {
     id: 15,
@@ -110,7 +110,7 @@ export default [
     title: "Sweet Child",
     artist: "Guns",
     genre: "Rock",
-    album: "Appetite",
+    album: "Scorpion",
   },
   {
     id: 17,
@@ -159,6 +159,6 @@ export default [
     title: "WolfStand",
     artist: "Drake",
     genre: "Classical",
-    album: "Slippery",
+    album: "Scorpion",
   },
 ];
