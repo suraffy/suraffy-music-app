@@ -1,16 +1,14 @@
 import { useSelector } from "react-redux";
 import type { RootState } from "../store";
-
 import { motion, AnimatePresence } from "framer-motion";
 import styled from "@emotion/styled";
+
 import StaticCard from "../components/common/StaticCard";
 
 const Statistics = () => {
-  const musicList = useSelector((state: RootState) => state.musicList.music);
-  const songs = musicList;
-  const artists = [...new Set(musicList.map((m) => m.artist))];
-  const genres = [...new Set(musicList.map((m) => m.genre))];
-  const albums = [...new Set(musicList.map((m) => m.album))];
+  const musicInfo = useSelector(
+    (state: RootState) => state.musicList.musicInfo
+  );
 
   const Quote = styled.p`
     font-family: Georgia, "Times New Roman", Serif;
@@ -26,23 +24,23 @@ const Statistics = () => {
           <AnimatePresence>
             <StaticCard
               header="Songs"
-              count={songs.length}
-              description={`As many as ${songs.length} songs in here. Enjoy exclusively songs only on our platform..`}
+              count={musicInfo.totalMusic}
+              description={`As many as ${musicInfo.totalMusic} songs in here. Enjoy exclusively songs only on our platform..`}
             />
             <StaticCard
               header="Artists"
-              count={artists.length}
+              count={musicInfo.totalArtist}
               description="Enjoy musics from variety of Artists."
             />
             <StaticCard
               header="Genre"
-              count={genres.length}
+              count={musicInfo.totalGenre}
               description="Experience the beauty of various music genres."
             />
             <StaticCard
               header="Albums"
-              count={albums.length}
-              description={`${albums.length} Albums are waiting to elevate your mood.`}
+              count={musicInfo.totalAlbum}
+              description={`${musicInfo.totalAlbum} Albums are waiting to elevate your mood.`}
             />
           </AnimatePresence>
         </motion.div>
