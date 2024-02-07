@@ -12,6 +12,13 @@ export interface MusicState {
 
 const initialState = {
   music: musicDB,
+  musicInfo: {
+    totalMusic: musicDB.length,
+    totalArtist: [...new Set(musicDB.map((m) => m.artist))].length,
+    totalGenre: 8,
+    totalAlbum: [...new Set(musicDB.map((m) => m.album))].length,
+  },
+  filterKeyword: "",
 };
 
 export const musicSlice = createSlice({
@@ -41,6 +48,8 @@ export const musicSlice = createSlice({
     search: (state, action: PayloadAction<string>) => {
       const searchPattern = new RegExp(action.payload, "i");
 
+      state.filterKeyword = "";
+
       state.music = musicDB.filter(
         (m) =>
           m.title.search(searchPattern) !== -1 ||
@@ -50,6 +59,8 @@ export const musicSlice = createSlice({
 
     filter: (state, action: PayloadAction<string>) => {
       const filterGenre = action.payload.toLowerCase();
+
+      state.filterKeyword = filterGenre;
 
       state.music = musicDB.filter(
         (m) => m.genre.toLowerCase().replace(/\s+/g, "") === filterGenre
