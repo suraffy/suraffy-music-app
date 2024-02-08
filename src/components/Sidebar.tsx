@@ -21,7 +21,7 @@ const List = styled.li`
   color: #444;
   font-size: 1.2rem;
   padding: 8px 0;
-  padding-left: 2rem;
+  padding-left: 1rem;
   margin: 0;
   cursor: pointer;
   border-radius: 10px;
