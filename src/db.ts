@@ -87,7 +87,7 @@ export default [
     id: 13,
     title: "Take Five",
     artist: "Dave",
-    genre: "Jazz",
+    genre: "Classical",
     album: "Time Out",
   },
   {
