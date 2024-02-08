@@ -34,7 +34,7 @@ const Header = () => {
             <input
               className="form-control mr-sm-2"
               type="search"
-              placeholder="Search music"
+              placeholder="Search music ♪♪♪"
               value={keyword}
               onChange={(e) => handleSearch(e.target.value)}
             />
