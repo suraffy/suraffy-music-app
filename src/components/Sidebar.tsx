@@ -20,7 +20,8 @@ const UList = styled.ul`
 const List = styled.li`
   color: #444;
   font-size: 1.2rem;
-  padding: 8px;
+  padding: 8px 0;
+  padding-left: 2rem;
   margin: 0;
   cursor: pointer;
   border-radius: 10px;
@@ -34,6 +35,10 @@ const SideCont = styled.div`
   z-index: 1;
   top: 100px;
 `;
+
+const activeGenre = {
+  background: "#f4f4f4",
+};
 
 const Sidebar = () => {
   const filterKeyword = useSelector(
@@ -51,81 +56,54 @@ const Sidebar = () => {
       <h2 className="mt-1 mb-3">Genres</h2>
       <UList>
         <List
-          onClick={() => handleFilter("pop")}
-          style={
-            filterKeyword === "pop"
-              ? { background: "#f4f4f4" }
-              : { background: "#fff" }
-          }
-        >
-          <img src={pop} width={"40px"} className="mx-2" />
-          Pop
-        </List>
-        <List
           onClick={() => handleFilter("blues")}
-          style={
-            filterKeyword === "blues"
-              ? { background: "#f4f4f4" }
-              : { background: "#fff" }
-          }
+          style={filterKeyword === "blues" ? activeGenre : {}}
         >
           <img src={blues} width={"40px"} className="mx-2" />
           Blues
         </List>
         <List
           onClick={() => handleFilter("rock")}
-          style={
-            filterKeyword === "rock"
-              ? { background: "#f4f4f4" }
-              : { background: "#fff" }
-          }
+          style={filterKeyword === "rock" ? activeGenre : {}}
         >
           <img src={rock} width={"40px"} className="mx-2" />
           Rock
         </List>
         <List
           onClick={() => handleFilter("jazz")}
-          style={
-            filterKeyword === "jazz"
-              ? { background: "#f4f4f4" }
-              : { background: "#fff" }
-          }
+          style={filterKeyword === "jazz" ? activeGenre : {}}
         >
           <img src={jazz} width={"40px"} className="mx-2" />
           Jazz
         </List>
         <List
+          onClick={() => handleFilter("pop")}
+          style={filterKeyword === "pop" ? activeGenre : {}}
+        >
+          <img src={pop} width={"40px"} className="mx-2" />
+          Pop
+        </List>
+        <List
+          onClick={() => handleFilter("classical")}
+          style={filterKeyword === "classical" ? activeGenre : {}}
+        >
+          <img src={classical} width={"40px"} className="mx-2" />
+          Classical
+        </List>
+        <List
           onClick={() => handleFilter("hiphop")}
-          style={
-            filterKeyword === "hiphop"
-              ? { background: "#f4f4f4" }
-              : { background: "#fff" }
-          }
+          style={filterKeyword === "hiphop" ? activeGenre : {}}
         >
           <img src={hiphop} width={"40px"} className="mx-2" />
           Hip Hop
         </List>
+
         <List
           onClick={() => handleFilter("electronic")}
-          style={
-            filterKeyword === "electronic"
-              ? { background: "#f4f4f4" }
-              : { background: "#fff" }
-          }
+          style={filterKeyword === "electronic" ? activeGenre : {}}
         >
           <img src={electronic} width={"40px"} className="mx-2" />
           Electronic
-        </List>
-        <List
-          onClick={() => handleFilter("classical")}
-          style={
-            filterKeyword === "classical"
-              ? { background: "#f4f4f4" }
-              : { background: "#fff" }
-          }
-        >
-          <img src={classical} width={"40px"} className="mx-2" />
-          Classical
         </List>
       </UList>
     </SideCont>
