@@ -43,6 +43,8 @@ export const musicSlice = createSlice({
       state.music = state.music.filter(
         (m: MusicState) => m.id !== action.payload
       );
+
+      state.musicInfo.totalMusic -= 1;
     },
 
     search: (state, action: PayloadAction<string>) => {
